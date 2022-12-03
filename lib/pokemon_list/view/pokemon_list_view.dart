@@ -9,8 +9,8 @@ import 'package:provider/provider.dart';
 import '../../provider/favorite_provider.dart';
 
 class PokemonListView extends StatefulWidget {
-  PokemonListView({super.key, required this.provider});
-  FavoriteProvider provider;
+  PokemonListView({super.key});
+  
   @override
   State<PokemonListView> createState() => _PokemonListViewState();
 }

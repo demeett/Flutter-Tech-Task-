@@ -11,14 +11,14 @@ class MyApp extends StatelessWidget {
   });
   @override
   Widget build(BuildContext context) {
-    var pokemonFvaorites = Provider.of<FavoriteProvider>(context);
+   
 
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(primarySwatch: Colors.indigo),
       debugShowCheckedModeBanner: false,
       home: PokemonListView(
-        provider: pokemonFvaorites,
+       
       ),
     );
   }
