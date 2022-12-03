@@ -9,7 +9,7 @@ class FavoriteProvider extends ChangeNotifier {
   Future<void> addCount() async {
     count = await getCount();
     count++;
-    setCount();
+    await setCount();
     notifyListeners();
   }
 
@@ -20,7 +20,7 @@ class FavoriteProvider extends ChangeNotifier {
 
   Future<void> setCount() async {
     final prefs = await prefInstance();
-    prefs.setInt('count', count);
+    await prefs.setInt('count', count);
   }
 
   Future<int> getCount() async {

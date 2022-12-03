@@ -28,31 +28,27 @@ class _PokemonFavoriteState extends State<PokemonFavorite> {
       appBar: AppBar(
         title: const Text(""),
       ),
-      body: Column(
-        children: [
-          ListView.builder(
-            scrollDirection: Axis.vertical,
-            shrinkWrap: true,
-            itemBuilder: ((context, index) {
-              return Card(
-                elevation: 4,
-                child: ListTile(
-                  trailing: IconButton(
-                    icon: const Icon(Icons.delete_outline),
-                    onPressed: () {
-                      return pokemonFvaorites.deleteFavItem(PokemonListModel(
-                          name: pokemonFvaorites.getFavItem()[index].name.toString(),
-                          url: pokemonFvaorites.getFavItem()[index].url.toString()));
-                    },
-                  ),
-                  title: Text(pokemonFvaorites.getFavItem()[index].name.toString()),
-                  subtitle: Text(pokemonFvaorites.getFavItem()[index].url.toString()),
-                ),
-              );
-            }),
-            itemCount: pokemonFvaorites.count,
-          )
-        ],
+      body: ListView.builder(
+        scrollDirection: Axis.vertical,
+        shrinkWrap: true,
+        itemBuilder: (context, index) {
+          return Card(
+            elevation: 4,
+            child: ListTile(
+              trailing: IconButton(
+                icon: const Icon(Icons.delete_outline),
+                onPressed: () {
+                  return pokemonFvaorites.deleteFavItem(PokemonListModel(
+                      name: pokemonFvaorites.getFavItem()[index].name.toString(),
+                      url: pokemonFvaorites.getFavItem()[index].url.toString()));
+                },
+              ),
+              title: Text(pokemonFvaorites.getFavItem()[index].name.toString()),
+              subtitle: Text(pokemonFvaorites.getFavItem()[index].url.toString()),
+            ),
+          );
+        },
+        itemCount: pokemonFvaorites.count,
       ),
       bottomNavigationBar: const CustomBottomNavBar(),
     );
